@@ -59,6 +59,8 @@ Module assumes you have social media content, which includes the body content of
 
 The clustering loops through the list of all accounts, normally sorted in reverse size or popularity, and for each account, searches all existing clusters to see if there is a valid match, given the min_threshold and second_cluster_factor parameters. If there is a match, the account is added to the existing cluster. If there is not a match, then, if there is enough messages from the account to justify, a new cluster will be created with the account acting as the seed. Otherwise the account is discarded.
 
+In theory, any measure could be used to determine if a given account should be added to a given cluster, such as, what fraction of the accounts messages match those within the cluster. Currently, the module combines message coverage, [Normalized Pointwise Mutual Information](https://en.wikipedia.org/wiki/Pointwise_mutual_information), and a dampening factor that reduces matching score when there is an insufficient number of messages to be confident.
+
 At the end, any clusters that are below a size threshold are discarded.
 
 ## License

@@ -61,7 +61,7 @@ def compute_cooccurrence_graph(clusters):
 
 
 # Runs a basic aglomerative clustering method. Each cluster has a "seed". If a given node passes the threshold, then will be added
-def aglomerative_cluster(
+def agglomerative_cluster(
     graph,
     nodes,
     num_content_clusters,

@@ -35,5 +35,5 @@ if __name__ == '__main__':
     if args.output_path:
         kwargs['outfile'] = args.output_path
 
-    from . import sm_parser
-    sm_parser.ct_generate_page_clusters(args.input_files, **kwargs)
+    from . import sm_processor
+    sm_processor.ct_generate_page_clusters(args.input_files, **kwargs)

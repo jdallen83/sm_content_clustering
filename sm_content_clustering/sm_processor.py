@@ -221,7 +221,7 @@ def ct_generate_page_clusters(infiles, content_cols=CT_CONTENT_FIELDS, add_langu
     pages = [{'page': k, 'total_interactions': v['total_interactions']} for k, v in page_data.items()]
 
     out_rows = []
-    for page in clustering.aglomerative_cluster(co_graph, pages, len(content_clusters), 'total_interactions', 'page', **kwargs):
+    for page in clustering.agglomerative_cluster(co_graph, pages, len(content_clusters), 'total_interactions', 'page', **kwargs):
         if page['cluster_size'] == 1:
             continue
         page['page'] = page['node']

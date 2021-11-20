@@ -57,7 +57,9 @@ Arguments for sm_processor.ct_generate_page_clusters() are
 
 Module assumes you have social media content, which includes the body content of a message and the account that created it. It begins by grouping by all messages, and finds which accounts have shared identical messages within the dataset. It then applies a basic agglomerative clustering algorithm to group the accounts into clusters that are frequently sharing the same messages.
 
-The clustering loops through the list of all accounts, normally sorted in reverse size or popularity, and for each account, searches all existing clusters to see if there is a valid match, given the min_threshold and second_cluster_factor parameters. If there is a match, the account is added to the existing cluster. If there is not a match, then, if there is enough messages from the account to justify, a new cluster will be created with the account acting as the seed.
+The clustering loops through the list of all accounts, normally sorted in reverse size or popularity, and for each account, searches all existing clusters to see if there is a valid match, given the min_threshold and second_cluster_factor parameters. If there is a match, the account is added to the existing cluster. If there is not a match, then, if there is enough messages from the account to justify, a new cluster will be created with the account acting as the seed. Otherwise the account is discarded.
+
+At the end, any clusters that are below a size threshold are discarded.
 
 ## License
 

@@ -10,5 +10,9 @@ setup(
     author_email='jeff@integrityinstitute.org',
     license='MIT',
     packages=['sm_content_clustering'],
+    install_requires=[
+        'pandas',
+        'fasttext',
+    ],
     zip_safe=False
 )

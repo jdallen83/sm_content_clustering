@@ -34,15 +34,15 @@ Module can also be called from within Python.
 
 Example that will generate a Pandas dataframe that contains potential networks:
 
-    import sm_content_clustering.sm_parser as sm_parser
+    import sm_content_clustering.sm_processor as sm_processor
 
     input_files = ['/path/to/1.csv', '/path/to/2.csv', '/path/to/3.csv']
-    df = sm_parser.ct_generate_page_clusters(input_files, add_language=True, ft_model_path='/path/to/lid.176.ftz')
+    df = sm_processor.ct_generate_page_clusters(input_files, add_language=True, ft_model_path='/path/to/lid.176.ftz')
     print(df)
 
 ### Options
 
-Arguments for sm_parser.ct_generate_page_clusters() are
+Arguments for sm_processor.ct_generate_page_clusters() are
 
 1. infiles: Input files to read content from. Required.
 2. content_cols: Which columns from the input files to use as content for the purposes of clustering identical posts. Default: Message, Image Text, Link, Link Text
